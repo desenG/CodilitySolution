@@ -70,6 +70,7 @@ FOR p = 1 to array size
      min=min(min, |temp|)
 ```
 Time complexity: O(N)
+
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/TapeEquilibrium.java)
