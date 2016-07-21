@@ -65,8 +65,8 @@ GET min value in dif
 ```
 SET temp to 2xarray[0]-sum
 SET min to |temp|
-FOR p = 1 to array size
-     temp = temp + array[p]x2
+FOR p = 2 to array size-2
+     temp = temp + array[p-1]x2
      min=min(min, |temp|)
 ```
 Time complexity: O(N)
