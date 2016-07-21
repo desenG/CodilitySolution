@@ -70,4 +70,5 @@ FOR p = 2 to array size -2
 	min=min(min, temp)
 ```
 Finally, convert the pseudocode to different language as the following:
+
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/Java/TapeEquilibrium.java)
