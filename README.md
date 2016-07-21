@@ -76,3 +76,5 @@ Finally, convert the pseudocode to different language as the following:
 
 2.[Objective C](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/main.m)
 
+3.[C #](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/Program.cs)
+
