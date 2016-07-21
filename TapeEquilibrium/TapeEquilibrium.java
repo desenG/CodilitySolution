@@ -11,7 +11,6 @@ public class TapeEquilibrium {
 
 class Solution {
     public int solution(int[] A) {
-        // write your code in Java SE 8
         // SET temp to 2xarray[0]-sum
         // SET min= |temp|
         // FOR p = 1 to array size
