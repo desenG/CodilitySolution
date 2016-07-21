@@ -79,3 +79,65 @@ Finally, convert the pseudocode to different language as the following:
 
 3.[C #](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/Program.cs)
 
+#DivisibleSumPairs
+##DivisibleSumPairs question:
+
+You are given an array of  integers, , and a positive integer, . Find and print the number of pairs where  and  +  is evenly divisible by .
+
+Input Format
+
+The first line contains  space-separated integers,  and , respectively. 
+
+The second line contains  space-separated integers describing the respective values of .
+
+Constraints
+
+2 <=n <=100
+1 <=k <=100
+1 <=ai<= 100
+
+Output Format
+
+Print the number of  pairs where  and  +  is evenly divisible by .
+
+Sample Input
+
+6 3
+
+1 3 2 6 1 2
+
+Sample Output
+
+5
+ 
+##analys:
+```
+(a0+a1) mod k=0? ++count
+(a0+a2) mod k=0? ++count
+…
+(a1+a2) mod k=0? ++count
+…
+```
+##pseudocode:
+```
+READ 2 numbers with space as separator from console 
+if Constrain check ok
+	1st as n, 2nd as k  
+READ n numbers with space as separator
+if Constrain check ok
+	put numbers to array
+FOR each element as a
+	FOR each element after a as b
+		if (a+b) mod k=0
+			count++
+	END LOOP
+END LOOP
+```		 
+Complexity:
+time complexity is O(N^2)
+
+space complexity is O(1)
+ 
+Finally, convert the pseudocode to different language as the following:
+
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/DivisibleSumPairs/TapeEquilibrium.java)
