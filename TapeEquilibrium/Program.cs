@@ -16,11 +16,11 @@ namespace PracticeCSharp
 	{
 		public int solution(int[] A)
 		{
-			// SET temp to 2xarray[0]-sum
-			// SET min= temp
-			// FOR p = 1 to array size
-			// 	temp = temp + array[p]x2
-			// 	min=min(min, temp)
+		    // SET temp to 2xarray[0]-sum
+		    // SET min to |temp|
+		    // FOR p = 2 to array size-2
+		    // 	temp = temp + array[p-1]x2
+		    // 	min=min(min, |temp|)
 			int temp = 2 * A[0] - A.Sum();
 			int min = Math.Abs(temp);
 			for (int i = 2; i < A.Length - 1; i++)
