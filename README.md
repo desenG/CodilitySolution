@@ -111,13 +111,15 @@ Sample Output
 5
  
 ##analys:
+```
 (a0+a1) mod k=0? ++count
 (a0+a2) mod k=0? ++count
 …
 (a1+a2) mod k=0? ++count
 …
-
+```
 ##pseudocode:
+```
 READ 2 numbers with space as separator from console 
 if Constrain check ok
 	1st as n, 2nd as k  
@@ -130,7 +132,7 @@ FOR each element as a
 			count++
 	END LOOP
 END LOOP
-		 
+```		 
 Complexity:
 time complexity is O(N^2)
 
