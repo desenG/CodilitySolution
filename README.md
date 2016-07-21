@@ -140,4 +140,4 @@ space complexity is O(1)
  
 Finally, convert the pseudocode to different language as the following:
 
-1.[Java](https://github.com/desenG/CodilitySolution/blob/master/DivisibleSumPairs/TapeEquilibrium.java)
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/DivisibleSumPairs/DivisibleSumPairs.java)
