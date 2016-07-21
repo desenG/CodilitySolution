@@ -73,3 +73,5 @@ Time complexity: O(N)
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/TapeEquilibrium.java)
+1.[Objective C](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/main.m)
+
