@@ -65,14 +65,17 @@ GET min value in dif
 ```
 SET temp to 2xarray[0]-sum
 SET min to |temp|
-FOR p = 1 to array size
-     temp = temp + array[p]x2
+FOR p = 2 to array size-2
+     temp = temp + array[p-1]x2
      min=min(min, |temp|)
 ```
 Time complexity: O(N)
+
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/TapeEquilibrium.java)
 
 2.[Objective C](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/main.m)
+
+3.[C #](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/Program.cs)
 
