@@ -141,3 +141,115 @@ space complexity is O(1)
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/DivisibleSumPairs/DivisibleSumPairs.java)
+
+# Sherlock and Valid String
+You know my powers, my dear Watson, and yet at the end of three months I was forced to confess that I had at last met an antagonist who was my intellectual equal.
+
+A "valid" string is a string S  such that for all distinct characters in  S each such character occurs the same number of times in S.
+
+For example, aabb is a valid string because the frequency of both characters a and b is 2, whereas aabbc is not a valid string because the frequency of characters a, b, and c is not the same.
+
+Watson gives a string S to Sherlock and asks him to remove some characters from the string such that the new string is a "valid" string.
+
+Sherlock wants to know from you if it's possible to be done with less than or equal to one removal.
+
+##Input Format
+
+The first and only line contains S, the string Watson gives to Sherlock.
+
+##Constraints
+1<=|S|<=10^5
+2. String  S contains lowercase letters only (a-z).
+Output Forma
+
+Output YES if S string  can be converted to a "valid" string by removing less than or equal to one character. 
+Else, output NO.
+
+##Sample Input
+
+aabbcd
+Sample Output
+
+NO
+
+##Explanation
+
+2 is the minimum number of removals required to make it a valid string. It can be done in following two ways:
+
+Remove c and d to get aabb. 
+
+Or remove a and b to get abcd.
+
+##Analys:
+```
+aabbcd
+
+a:2
+b:2
+c:1
+d:1
+e:0
+…
+
+a: array[‘a’-‘a’]++
+a: array[‘a’-‘a’]++
+..
+
+[2,2,1,1,0,0,…]
+
+2 foundsame=false founddif=false,repeatvalue=0
+2: 2=2 foundsame=true repeatvalue=2
+1: 1!=2 founddif=true
+1: 1!=2 PRINT NO
+```
+Finally, we got the useful data:
+
+[2,2,1,1] NO
+
+By analyst  more cases, we  get the following parter in other cases:
+```
+[x,x,x,x,…] YES
+[x,x,x,x,…,1] YES
+[x+1,x,x,x,…] YES
+other pattern—NO
+```
+##pseudocode:
+```
+READ input
+IF input is not match constrain
+EXIT
+
+FILL 26 elements array with 0—each element is used to count char occurrence
+FOR each char
+	if it is lower case, array[the char-‘a’] increase 1
+
+REMOVE 0 from array
+
+SET founddif to false,repeatvalue to 0, difvalue to 0
+IF 2nd equal 1st
+	SET repeatvalue to 1st
+ELSE 
+	SET founddif to true
+	IF 3rd is in (1st,2nd)
+		SET repeatvalue to 3rd, difvalue to dif(3,(1st,2nd))
+
+		
+FOR 4th to last one in array
+	IF element not equal repeatvalue 
+		IF founddif is true
+			PRINT “NO”
+			EXIST
+		ELSE
+			founddif to true
+IF founddif is false
+	PRINT YES
+	EXIT
+ELSE
+	IF difvalue is 1
+	PRINT YES
+	EXIT
+	ELSE IF difvalue-repeatvalue equal 1
+		PRINT YES
+	ELSE
+		PRINT NO
+```
