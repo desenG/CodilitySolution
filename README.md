@@ -89,11 +89,15 @@ Finally, convert the pseudocode to different language as the following:
 
 A “valid” string is a string S such that for all distinct characters in S each such character occurs the same number of times in S.
 
+[detail](https://github.com/desenG/CodilitySolution/tree/master/SherlockandValidString)
+
 ##Complexity:
 
 time complexity is O(N)
 
 space complexity is O(1)
+
+
 
 ##Analys:
 ```
@@ -172,6 +176,9 @@ ELSE
 
 Given N integers, count the number of pairs of integers whose difference is K .
 
+[detail](https://github.com/desenG/CodilitySolution/tree/master/Pairs)
+
+
 ##Complexity:
 
 time complexity is O(N*log(N))
@@ -219,8 +226,10 @@ END LOOP
 
 Check whether array N is a permutation.
 
-##pseudocode:
+[detail](https://github.com/desenG/CodilitySolution/tree/master/PermCheck)
 
+##pseudocode:
+```
 FILL 0 to new array B with the same size as A[]
 FOR each element
     IF element<1 or element > size A[]
@@ -229,3 +238,8 @@ FOR each element
     IF A[element-1]>1
         RETURE 0
 END LOOP
+```
+
+Finally, convert the pseudocode to different language as the following:
+
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/PermCheck/PermCheck.java)
