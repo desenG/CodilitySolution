@@ -1,52 +1,14 @@
-# CodilitySolution
+#TapeEquilibrium question:
 
-##TapeEquilibrium question:
-A non-empty zero-indexed array A consisting of N integers is given. Array A represents numbers on a tape.
+Minimize the value |(A[0] + … + A[P-1]) – (A[P] + … + A[N-1])|.
 
-Any integer P, such that 0 < P < N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P − 1] and A[P], A[P + 1], ..., A[N − 1].
-
-The difference between the two parts is the value of: |(A[0] + A[1] + ... + A[P − 1]) − (A[P] + A[P + 1] + ... + A[N − 1])|
-
-In other words, it is the absolute difference between the sum of the first part and the sum of the second part.
-
-For example, consider array A such that:
-
-  A[0] = 3
-  A[1] = 1
-  A[2] = 2
-  A[3] = 4
-  A[4] = 3
-We can split this tape in four places:
-
-P = 1, difference = |3 − 10| = 7 
-P = 2, difference = |4 − 9| = 5 
-P = 3, difference = |6 − 7| = 1 
-P = 4, difference = |10 − 3| = 7 
-Write a function:
-
-class Solution { public int solution(int[] A); }
-
-that, given a non-empty zero-indexed array A of N integers, returns the minimal difference that can be achieved.
-
-For example, given:
-
-  A[0] = 3
-  A[1] = 1
-  A[2] = 2
-  A[3] = 4
-  A[4] = 3
-the function should return 1, as explained above.
-
-Assume that:
-
-N is an integer within the range [2..100,000];
-each element of array A is an integer within the range [−1,000..1,000].
-Complexity:
+##Complexity:
 
 expected worst-case time complexity is O(N);
-expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).
-Elements of input arrays can be modified.
 
+expected worst-case space complexity is O(N)
+
+[detail](https://github.com/desenG/CodilitySolution/tree/master/TapeEquilibrium)
 ## Analys as the following:
 ```
 p=1: dif0=a0-(a1+a2+a3+a4)=-(a0+a1+a2+a3+a4)+2a0
@@ -80,36 +42,17 @@ Finally, convert the pseudocode to different language as the following:
 3.[C #](https://github.com/desenG/CodilitySolution/blob/master/TapeEquilibrium/Program.cs)
 
 #DivisibleSumPairs
-##DivisibleSumPairs question:
 
-You are given an array of n integers, a0,a1,...,an-1, and a positive integer,k . Find and print the number of (i,j) pairs where i<j and  ai+aj  is evenly divisible by k.
-
-Input Format
-
-The first line contains s space-separated integers, n and k, respectively. 
-
-The second line contains n space-separated integers describing the respective values of a0,a1,...,an-1.
-
-Constraints:
-
-2 <=n <=100
-1 <=k <=100
-1 <=ai<= 100
-
-Output Format
-
-Print the number of (i,j) pairs where i<j and  ai+aj  is evenly divisible by k.
-
-Sample Input
-
-6 3
-
-1 3 2 6 1 2
-
-Sample Output
-
-5
+You are given an array of n integers and a positive integer, k. Find and print the number of (i,j) pairs where i < j and ai + aj is evenly divisible by k.
  
+##Complexity:
+
+time complexity is O(N^2)
+
+space complexity is O(1)
+
+[detail](https://github.com/desenG/CodilitySolution/tree/master/DivisibleSumPairs)
+
 ##analys:
 ```
 (a0+a1) mod k=0? ++count
@@ -143,42 +86,14 @@ Finally, convert the pseudocode to different language as the following:
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/DivisibleSumPairs/DivisibleSumPairs.java)
 
 # Sherlock and Valid String
-You know my powers, my dear Watson, and yet at the end of three months I was forced to confess that I had at last met an antagonist who was my intellectual equal.
 
-A "valid" string is a string S  such that for all distinct characters in  S each such character occurs the same number of times in S.
+A “valid” string is a string S such that for all distinct characters in S each such character occurs the same number of times in S.
 
-For example, aabb is a valid string because the frequency of both characters a and b is 2, whereas aabbc is not a valid string because the frequency of characters a, b, and c is not the same.
+##Complexity:
 
-Watson gives a string S to Sherlock and asks him to remove some characters from the string such that the new string is a "valid" string.
+time complexity is O(N)
 
-Sherlock wants to know from you if it's possible to be done with less than or equal to one removal.
-
-##Input Format
-
-The first and only line contains S, the string Watson gives to Sherlock.
-
-##Constraints
-1<=|S|<=10^5
-2. String  S contains lowercase letters only (a-z).
-Output Forma
-
-Output YES if S string  can be converted to a "valid" string by removing less than or equal to one character. 
-Else, output NO.
-
-##Sample Input
-
-aabbcd
-Sample Output
-
-NO
-
-##Explanation
-
-2 is the minimum number of removals required to make it a valid string. It can be done in following two ways:
-
-Remove c and d to get aabb. 
-
-Or remove a and b to get abcd.
+space complexity is O(1)
 
 ##Analys:
 ```
@@ -257,34 +172,11 @@ ELSE
 
 Given N integers, count the number of pairs of integers whose difference is K .
 
-##Input Format
+##Complexity:
 
-The first line contains N and K. 
+time complexity is O(N*log(N))
 
-The second line contains N numbers of the set. All the N numbers are unique.
-
-##Output Format
-
-An integer that tells the number of pairs of integers whose difference is K.
-
-##Constraints: 
-```
-1. N<=10^5
-2. 0 < K < 10^9
-3.Each integer will be greater than 0  and at least K smaller than 2^31-1 .
-```
-##Sample Input
-```
-5 2  
-1 5 3 4 2  
-```
-##Sample Output
-```
-3
-```
-##Explanation
-
-There are 3 pairs of integers in the set with a difference of 2
+space complexity is O(N)
 
 ##My thinking:
 ```
