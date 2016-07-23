@@ -215,3 +215,17 @@ FOR each element in array as a
 	END LOOP
 END LOOP
 ```
+＃PermCheck
+
+Check whether array N is a permutation.
+
+##pseudocode:
+
+FILL 0 to new array B with the same size as A[]
+FOR each element
+    IF element<1 or element > size A[]
+        RETURE 0
+    B[element-1]++
+    IF A[element-1]>1
+        RETURE 0
+END LOOP
