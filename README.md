@@ -286,5 +286,6 @@ FOR i 0 to N-1
 	if B[i] equal 0
 		RETURN i+1
 END LOOP
+RETURN N+1
 ```
 Time complexity: O(N)
