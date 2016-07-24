@@ -243,3 +243,48 @@ END LOOP
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/PermCheck/PermCheck.java)
+
+#MaxCounters
+Find the minimal positive integer not occurring in a given sequence.
+
+##My thinking:
+For the following example
+```
+N=5
+-111, -112, 2, 3,6
+```
+What I will do is:
+```
+SET B=[0,0,0,0,0]
+-111: next
+-112: next
+2: B[2-1]++ -> [0,1,0,0,0]
+3: B[3-1]++ -> [0,1,1,0,0]
+6: continue
+
+[0,1,1,0,0]
+```
+So:
+1 is result
+
+##pseudocode:
+```
+IF N equal 1
+	IF A[0] equal 1
+		RETURN 2
+	ELSE
+		RETURN 1
+SET N integers array with 0 as B
+FOR each element
+	IF element<1 or element>N 
+		Continue
+	ELSE 
+		B[element-1]++
+END LOOP
+
+FOR i 0 to N-1
+	if B[i] equal 0
+		RETURN i+1
+END LOOP
+```
+Time complexity: O(N)
