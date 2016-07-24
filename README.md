@@ -289,3 +289,65 @@ END LOOP
 RETURN N+1
 ```
 Time complexity: O(N)
+
+#PassingCars
+Count the number of passing cars on the road.
+##My first thinking:
+```
+For array [x] -> 0
+For array [0,1,0,1,1]
+
+0: [1.0,1,1] has 3 1s. count+3
+1: next
+0: [1,1] has 2 1s. count+2
+```
+##pseudocode:
+```
+IF array size equal 1
+	RETURN 0;
+FOR each element as a
+	IF a not equal 0 Continue;
+	FOR each element after b
+		IF(b equal 1) count ++
+			IF(count>1,000,000,000)
+				RETURN -1
+	END LOOP
+END LOOP
+RETURN count
+```
+Obviously, it is not a good solution in term of time complexity.
+##My another thinking to enhance the performance:
+```
+For array [0,1,0,1,1]
+
+The array has 2 0s and 3 1s.
+
+0: count+3; 1 0s left
+1: 3-1=2
+0: count+2; none 0s left Exit;
+```
+
+##pseudocode:
+```
+RETRIEVE amount of 1 as amount1, and amount of 0 as amount0
+INIT count=0
+INIT i=0
+WHILE amount0>0
+	IF A[i] equal 0
+		amount0—
+		count+=amount1
+		IF(count>1,000,000,000)
+			RETURN -1
+	ELSE
+		amount1—
+	IF amount1==0 
+		BREAK
+	i++;
+ENDWHILE
+RETURN count
+```
+##Time complexity:
+O(N)
+Finally, convert the pseudocode to different language as the following:
+
+1.[Java](https://github.com/desenG/CodilitySolution/tree/master/PassingCars)
