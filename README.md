@@ -222,7 +222,7 @@ FOR each element in array as a
 	END LOOP
 END LOOP
 ```
-＃PermCheck
+#PermCheck
 
 Check whether array N is a permutation.
 
