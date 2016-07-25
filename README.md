@@ -351,3 +351,132 @@ O(N)
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/tree/master/PassingCars)
+
+#GenomicRangeQuery
+Find the minimal nucleotide from a range of sequence DNA.
+
+[detail](https://github.com/desenG/CodilitySolution/tree/master/GenomicRangeQuery)
+##My first thinking
+```
+Solution1: P[0] = 2    Q[0] = 4: [G,C,C] -> [3,2,2] -> 2
+Solution2: P[0] = 2    Q[0] = 4: IN [G,C,C], C in min value -> So C (2)
+```
+We can see solution 2 is better.
+##pseudocode:
+```
+SLICE S to array A
+INIT M int array B
+FOR i 0 to M-1
+	SET min to A[P[i]]
+	IF P[i] equal Q[i]
+		SET B[i] to (min equal ?A, ?C, ?G, ?T :1,2,3,4)
+		CONTINUE:
+	FOR element from A[P[i]+1] to A[Q[i]]
+		IF element < min
+			SET min to element
+	ENDLOOP
+	SET B[i] to (min equal ?A, ?C, ?G, ?T :1,2,3,4)
+ENDLOOP
+
+RETURN B
+```
+Time complexity:
+O(N * M)
+
+Finally, convert the pseudocode to different language as the following:
+
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/GenomicRangeQuery/GenomicRangeQueryNxM.java)
+
+It is not great solution. 
+
+I found another solution.
+
+##Solution3:
+For A [CAGCCTA] :
+```
+2A3C1G1T
+[2,3,1,1]
+for i 0 to N
+i=0, A[0]=C -> [2,2,1,1] 
+i=1, A[1]=A -> [1,2,1,1]
+i=2, A[2]=G -> [1,2,0,1]
+i=3, A[3]=C -> [1,1,0,1]
+i=4, A[4]=C -> [1,0,0,1]
+i=5, A[5]=T -> [1,0,0,0]
+i=6, A[6]=A -> [0,0,0,0]
+```
+So we get a array of array:
+```
+[
+0:[2,3,1,1]
+1:[2,2,1,1] 
+2:[1,2,1,1]
+3:[1,2,0,1]
+4:[1,1,0,1]
+5:[1,0,0,1]
+6:[1,0,0,0]
+7:[0,0,0,0]
+]
+```
+```
+P[0] = 2    Q[0] = 4: [1,2,1,1]-[1,1,0,1]=[0,1,1,0] ->2
+P[1] = 5    Q[1] = 5: [1,0,0,1] -> 1
+P[0] = 0    Q[0] = 2: [2,3,1,1]-[1,2,1,1]=[1,1,0,0] ->1
+```
+##pseudocode
+```
+SLICE S to array A
+INIT result to a array
+INIT amountA to 0,amountC to 0, amountG to 0, amountT to 0
+FOR i 0 to N-1
+	IF(A[i]) equal A
+		amountA++;
+	IF(A[i]) equal C
+		amountC++;
+	IF(A[i]) equal G
+		amountG++;
+	IF(A[i]) equal T
+		amountT++;	
+ENDLOOP
+
+INIT C array of array
+SET C[0] to [amountA,amountC,amountG,amountT]
+FOR i 0 to N-1
+	IF(A[i]) equal A
+		SET C[i+1] to [amountA-1,amountC,amountG,amountT]
+	IF(A[i]) equal C
+		SET C[i+1] to [amountA,amountC-1,amountG,amountT]
+	IF(A[i]) equal G
+		SET C[i+1] to [amountA,amountC,amountG-1,amountT]
+	IF(A[i]) equal T
+		SET C[i+1] to [amountA,amountC,amountG,amountT-1]
+ENDLOOP
+
+FOR i 0 to M-1
+	IF P[i] equal Q[i]
+		IF A[P[i]] equal 'A'
+			SET result[i] to 1
+		ELSE IF A[P[i]] equal 'C'
+			SET result[i] to 2
+		ELSE IF A[P[i]] equal 'G'
+			SET result[i] to 3
+		ELSE IF A[P[i]] equal 'T'
+			SET result[i] to 4
+	ELSE
+		IF C[P[i]][0]-C[Q[i]+1][0]>0
+			SET result[i] to 1
+		ELSE IF C[P[i]][1]-C[Q[i]+1][1]>0
+			SET result[i] to 2
+		ELSE IF C[P[i]][2]-C[Q[i]+1][2]>0
+			SET result[i] to 3
+		ELSE IF C[P[i]][3]-C[Q[i]+1][3]>0
+			SET result[i] to 4
+ENDLOOP
+RETURN result		
+```		 
+Time complexity:
+O(N + M)
+
+Finally, convert the pseudocode to different language as the following:
+
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/GenomicRangeQuery/GenomicRangeQueryNplusM.java)
