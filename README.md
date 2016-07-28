@@ -481,12 +481,12 @@ Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/GenomicRangeQuery/GenomicRangeQueryNplusM.java)
 
-##SUM Fibonacci number
+#SUM Fibonacci number
 
 #For example: index=3
 sum=1+1+2+3=7
 
-#My thinking
+##My thinking
 
 sum=1, pre=0, current=1
 
