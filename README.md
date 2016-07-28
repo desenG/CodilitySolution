@@ -480,3 +480,31 @@ O(N + M)
 Finally, convert the pseudocode to different language as the following:
 
 1.[Java](https://github.com/desenG/CodilitySolution/blob/master/GenomicRangeQuery/GenomicRangeQueryNplusM.java)
+
+##SUM Fibonacci number
+
+#For example: index=3
+sum=1+1+2+3=7
+
+#My thinking
+
+sum=1, pre=0, current=1
+
+1:  temp=pre=0, pre=current=1, curent=temp+curent=0+1=1, sum+=curent=1+1
+
+2:  temp=pre=1, pre=current=1, curent=temp+curent=1+1=2, sum+=curent=1+1+2
+
+3:  temp=pre=1, pre=current=1, curent=temp+curent=1+2=3, sum+=curent=1+1+2+3
+
+Pseudocode:
+```
+SET sum to 1, pre to 0, current to 1, temp to 0
+FOR i 1 to index
+	SET temp to pre
+	SET pre to current
+	SET current to temp+current
+	SET sum+=current
+ENDLOOP
+```
+
+
