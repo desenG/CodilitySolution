@@ -506,5 +506,5 @@ FOR i 1 to index
 	SET sum+=current
 ENDLOOP
 ```
-1.[Java](https://github.com/desenG/CodilitySolution/tree/master/Fibonacci)
+1.[Java](https://github.com/desenG/CodilitySolution/blob/master/Fibonacci/Fibonacci.java)
 
